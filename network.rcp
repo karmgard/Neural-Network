@@ -1,0 +1,47 @@
+#
+# Run Control Parameters for the neural network
+#
+# ######### Internal parameters, these are accessible as params-><NAME> ####### #
+#
+uint_array TOPOLOGY		= 2,3,2		# Network topology: 
+
+string SQUASH_FUNCTION		= LOGISTIC	# Name of the weighting function to use:
+       				  		# IDENTITY,LOGISTIC,SIGMOID,TANH
+
+string ERROR_FUNCTION		= SQUARED	# How to calculate network error:
+       				  		# LINEAR, ABS, SQUARED
+float LEARNING_RATE		= 0.5
+float TEMPERATURE		= 0.5
+bool BIAS			= false          # Use a bias on each node activation?
+bool NORMALIZE			= false		# Run through the input and scale it to [0,1]
+
+bool TRAIN			= false		# Training run or categorization run?
+uint TRAINING_CYCLES         	= 1		# Quit after this many tries regardless
+float TRAINING_LIMIT		= 0.000001	# When the output is close enough to be done
+string TRAINING_FILE            = training_test_2in_2out.dat
+string SAVE_TRAINING_FILE	= trained_network.dat
+
+int VERBOSE			= 1     	# Program noises
+
+
+string DELIMITER		=  
+string NETWORK_FILE		= trained_network.dat
+string INPUT_FILE		= test.dat
+
+ulong SEED			= 0		# Force a particular seed for the random
+      						# number generator -- for repeating 
+						# particular runs (the seed value is
+						# dumpped out when a run begins)
+
+
+###################### External user-defined parameters ####################
+#                                                                          #
+# You can define whatever parameters you need here, and they're accessible #
+# through the parameters functions as params->get<TYPE>("NAME")            #
+#                                                                          #
+############################################################################
+#float_array WEIGHTS		= 0.501,0.502,0.503,0.504,0.505,0.506,0.751,0.752,0.753
+#float_array NORMALIZATION	= 0.220,0.222
+#float_array OFFSET              = 0.260,0.726
+
+#EOF					# End-Of-File marker.
